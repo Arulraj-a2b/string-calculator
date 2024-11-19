@@ -1,5 +1,11 @@
+import { CenterView } from "./packages";
+
 const App = () => {
-  return <div>App</div>;
+  return (
+    <CenterView>
+      <div>App</div>
+    </CenterView>
+  );
 };
 
 export default App;
