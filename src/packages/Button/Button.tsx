@@ -36,13 +36,13 @@ const Button = ({
   btnType,
 }: Props) => {
   let buttonClassName =
-    "px-3 py-2 border-2 active:scale-95 transition transform active:opacity-50 flex items-center font-regular";
+    "px-4 py-2 border-2 transition-all transform active:opacity-70 relative overflow-hidden flex items-center justify-center font-bold";
 
   if (color === "primary") {
     buttonClassName +=
       variant === "outline"
-        ? " text-cyan-700 border-cyan-700"
-        : " bg-cyan-700 text-white border-cyan-700";
+        ? " text-white border-black"
+        : " bg-black text-white border-black";
   } else if (color === "secondary") {
     buttonClassName +=
       variant === "outline"
@@ -55,8 +55,11 @@ const Button = ({
   }
 
   if (fullWidth) {
-    buttonClassName += " w-full justify-center";
+    buttonClassName += " w-full";
   }
+
+  buttonClassName +=
+    " hover:scale-105 hover:shadow-lg active:scale-95 transition-transform duration-200 ease-in-out";
 
   return (
     <button
@@ -65,8 +68,13 @@ const Button = ({
       disabled={disabled}
       className={buttonClassName}
     >
-      {startIcon && <span className="mr-2">{startIcon}</span>} {children}{" "}
+      {startIcon && <span className="mr-2">{startIcon}</span>}
+      {children}
       {endIcon && <span className="ml-2">{endIcon}</span>}
+
+      {!disabled && (
+        <div className="absolute top-0 left-0 w-full h-full shimmer-animation" />
+      )}
     </button>
   );
 };
