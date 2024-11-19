@@ -1,6 +1,7 @@
 import { Fragment, useState } from "react";
 import { Button, InpuText } from "../../packages";
 import { isEmpty } from "../../utils";
+import { stringCalculator } from "./stringCalculatorHelper";
 
 const HomeScreen = () => {
   const [input, setInput] = useState("");
@@ -13,7 +14,7 @@ const HomeScreen = () => {
     if (event) {
       event.preventDefault();
     }
-    setResult(result);
+    setResult(stringCalculator(input));
   };
   return (
     <Fragment>
