@@ -1,9 +1,10 @@
+import { HomeScreen } from "./modules";
 import { CenterView } from "./packages";
 
 const App = () => {
   return (
     <CenterView>
-      <div>App</div>
+      <HomeScreen />
     </CenterView>
   );
 };
