@@ -3,7 +3,11 @@ import { isEmpty } from "../../utils";
 export const stringCalculator = (numbers: string): number | null => {
   if (isEmpty(numbers)) return 0;
 
-  const allNumbers = (numbers.match(/[+-]?\d+/g) || []).map(Number);
+  if (/^[a-zA-Z]+$/.test(numbers)) {
+    alert("Invalid input: Input must not contain only letters.");
+    return null;
+  }
+  const allNumbers = (numbers.match(/[-]?\d+/g) || []).map(Number);
 
   const negatives = allNumbers.filter((num) => num < 0 || Object.is(num, -0));
   if (negatives.length) {
