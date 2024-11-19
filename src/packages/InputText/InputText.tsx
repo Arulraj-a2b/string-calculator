@@ -20,7 +20,7 @@ const InpuText = ({ type, placeholder, value, onChange }: InputProps) => {
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      className={`p-3 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-cyan-700 focus:border-cyan-700 font-regular`}
+      className="p-3 w-full border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-1 focus:ring-cyan-700 focus:border-cyan-700 font-regular shimmer-animation-input"
     />
   );
 };

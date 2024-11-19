@@ -15,7 +15,7 @@ body {
   background-color: #ffffff;
   font-family: "font-regular";
 }
-/* Keyframe animation for shimmer effect */
+
 @keyframes shimmer {
   0% {
     transform: translateX(-100%);
@@ -25,7 +25,6 @@ body {
   }
 }
 
-/* Shimmer effect style */
 .shimmer-animation {
   position: absolute;
   top: 0;
@@ -46,13 +45,33 @@ body {
 button {
   position: relative;
   overflow: hidden;
-  border-radius: 8px; /* Optional: round the corners */
+  border-radius: 8px;
 }
 
 button:disabled {
-  background: #e0e0e0; /* Light grey background when disabled */
+  background: #e0e0e0;
 }
 
 button:disabled .shimmer-animation {
-  display: none; /* Remove shimmer effect when button is disabled */
+  display: none;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -100% 0;
+  }
+  100% {
+    background-position: 100% 0;
+  }
+}
+
+.shimmer-animation-input {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite linear;
+}
+
+input:focus,
+input:hover {
+  animation: none;
 }
